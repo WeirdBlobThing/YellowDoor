@@ -19,7 +19,6 @@ public class TimeManager : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.OnPauseChanged += OnPauseChanged;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void OnPauseChanged(object sender, PauseEventArgs pauseEventArgs)
