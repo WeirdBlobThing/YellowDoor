@@ -15,3 +15,4 @@ UserSettings/
 Assets/_TerrainAutoUpgrade
 Assets/_TerrainAutoUpgrade.meta
 mono_crash.*.json
+/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
