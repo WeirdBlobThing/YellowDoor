@@ -8,7 +8,6 @@ public class PauseEventArgs : EventArgs
 
 public class GameManager : MonoBehaviour
 {
-
     public event EventHandler<PauseEventArgs> OnPauseChanged;
 
     public static GameManager Instance;
@@ -18,6 +17,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

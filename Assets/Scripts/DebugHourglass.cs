@@ -7,6 +7,11 @@ public class DebugHourglass : MonoBehaviour
     [SerializeField]
     private TMP_Text m_timer;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Update()
     {
         int minutes = Mathf.FloorToInt(TimeManager.Instance.GetTimeInSeconds() / 60);
