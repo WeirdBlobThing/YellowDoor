@@ -1,0 +1,16 @@
+Library/
+Logs/
+Temp/
+xcodebuild/
+.vscode/
+*.sln
+.vs/
+*.csproj
+Assets/Resources/player.
+obj/
+Builds/*
+.DS_STORE
+UserSettings/
+Assets/_TerrainAutoUpgrade
+Assets/_TerrainAutoUpgrade.meta
+mono_crash.*.json
