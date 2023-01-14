@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
@@ -12,45 +10,58 @@ public class TimeManager : MonoBehaviour
     private float m_secondsLeft;
     private bool m_countingSeconds = true;
 
-    private void Awake() {
+    private void Awake()
+    {
         Instance = this;
         Reset();
     }
 
-    private void Start() {
+    private void Start()
+    {
         GameManager.Instance.OnPauseChanged += OnPauseChanged;
     }
 
-    public void OnPauseChanged(object sender, PauseEventArgs pauseEventArgs) {
-        if (pauseEventArgs.IsPaused) {
+    public void OnPauseChanged(object sender, PauseEventArgs pauseEventArgs)
+    {
+        if (pauseEventArgs.IsPaused)
+        {
             Pause();
-        } else {
+        }
+        else
+        {
             Unpause();
         }
     }
 
-    public float GetTimeInSeconds() {
+    public float GetTimeInSeconds()
+    {
         return m_secondsLeft;
     }
 
-    public void AddSeconds(float seconds) {
+    public void AddSeconds(float seconds)
+    {
         m_secondsLeft += seconds;
     }
 
-    public void Pause() {
+    public void Pause()
+    {
         m_countingSeconds = false;
     }
 
-    public void Unpause() {
+    public void Unpause()
+    {
         m_countingSeconds = true;
     }
 
-    private void Reset() {
+    private void Reset()
+    {
         m_secondsLeft = m_defaultStartTimeInSeconds;
     }
 
-    private void Update() {
-        if (!m_countingSeconds) {
+    private void Update()
+    {
+        if (!m_countingSeconds)
+        {
             return;
         }
 

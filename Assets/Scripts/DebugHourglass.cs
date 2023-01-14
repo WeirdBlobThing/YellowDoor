@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,22 +7,28 @@ public class DebugHourglass : MonoBehaviour
     [SerializeField]
     private TMP_Text m_timer;
 
-    private void Update() {
+    private void Update()
+    {
         int minutes = Mathf.FloorToInt(TimeManager.Instance.GetTimeInSeconds() / 60);
         int seconds = Mathf.FloorToInt(TimeManager.Instance.GetTimeInSeconds() % 60);
 
 
         // Probably a ToString that left pads zeros but :shrug:
         string minutesString = "0";
-        if (minutes > 0) {
+        if (minutes > 0)
+        {
             minutesString = minutes.ToString();
         }
 
         string secondsString = "00";
-        if (seconds > 0) {
-            if (seconds > 9) {
+        if (seconds > 0)
+        {
+            if (seconds > 9)
+            {
                 secondsString = seconds.ToString();
-            } else {
+            }
+            else
+            {
                 secondsString = string.Format("0{0}", seconds);
             }
         }
