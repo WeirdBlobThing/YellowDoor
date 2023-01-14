@@ -5,6 +5,7 @@ xcodebuild/
 .vscode/
 *.sln
 .vs/
+.vsconfig
 *.csproj
 Assets/Resources/player.
 obj/
