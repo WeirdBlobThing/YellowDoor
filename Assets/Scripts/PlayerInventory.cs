@@ -13,16 +13,6 @@ public class PlayerInventory : MonoBehaviour
         Instance = this;
     }
 
-    //public int SmallKeyCount()
-    //{
-    //    return m_smallKeys;
-    //}
-
-    //public int BigKeyCount()
-    //{
-    //    return m_bigKeys;
-    //}
-
     public int KeyCount(bool isBigKey)
     {
         if (isBigKey)
@@ -56,6 +46,15 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             m_smallKeys--;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            m_smallKeys += 5;
+            m_bigKeys += 5;
         }
     }
 }
