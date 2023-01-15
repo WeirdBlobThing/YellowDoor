@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class ProximityTrigger : MonoBehaviour
 {
-
     [SerializeField]
-    private bool m_requireKeyCode = false;
-
-    [SerializeField]
-    private KeyCode m_activationKeyCode;
+    private KeyCode m_activationKeyCode = KeyCode.None;
 
     private IPlayerProximityTrigger m_playerProximityTrigger;
 
@@ -45,12 +41,12 @@ public class ProximityTrigger : MonoBehaviour
     {
         if (m_playerProximityTrigger != null)
         {
-            if (m_requireKeyCode && Input.GetKeyUp(m_activationKeyCode))
+            if (m_activationKeyCode != KeyCode.None && Input.GetKeyUp(m_activationKeyCode))
             {
                 m_playerProximityTrigger.Trigger();
                 m_playerProximityTrigger = null;
             }
-            else if (!m_requireKeyCode)
+            else if (m_activationKeyCode == KeyCode.None)
             {
                 m_playerProximityTrigger.Trigger();
                 m_playerProximityTrigger = null;
