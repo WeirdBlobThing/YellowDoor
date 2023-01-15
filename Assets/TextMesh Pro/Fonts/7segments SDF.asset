@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: 7segments SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -298185610
   material: {fileID: 7923743846073529100}
-  materialHashCode: 0
+  materialHashCode: -184572906
   m_Version: 1.1.0
   m_SourceFontFileGUID: dcdc98a86545e4f7a82e512d22d2ddf7
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: dcdc98a86545e4f7a82e512d22d2ddf7, type: 3}
@@ -85,7 +85,7 @@ MonoBehaviour:
     m_SubscriptSize: 0.5
     m_UnderlineOffset: 3.2124023
     m_UnderlineThickness: 2.1416016
-    m_StrikethroughOffset: 0
+    m_StrikethroughOffset: 15.6
     m_StrikethroughThickness: 2.1416016
     m_TabWidth: 11
   m_GlyphTable:
@@ -1145,9 +1145,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
