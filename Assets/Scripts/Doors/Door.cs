@@ -35,9 +35,9 @@ public class Door : MonoBehaviour, IDoor, IPlayerProximityTrigger
             Open();
 
             // TODO: This should wait until the animation is complete!
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(1.5f);
 
-            //RoomManager.Instance.LoadNewRoom(m_difficulty);
+            RoomManager.Instance.LoadNewRoom(m_difficulty);
         }
     }
 }

@@ -31,8 +31,8 @@ public class Lock : MonoBehaviour, IPlayerProximityTrigger
         {
             IsLocked = false;
             PlayerInventory.Instance.RemoveKey(IsBigLock);
-            //UpperLock.isKinematic = false;
-            //LowerLock.isKinematic = false;
+            UpperLock.isKinematic = false;
+            LowerLock.isKinematic = false;
             UpperLock.AddForce(Vector3.up * LockExplosionScale, ForceMode.Impulse);
             LowerLock.AddForce(Vector3.down * LockExplosionScale, ForceMode.Impulse);
             return true;
