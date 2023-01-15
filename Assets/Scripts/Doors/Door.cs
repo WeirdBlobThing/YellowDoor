@@ -1,29 +1,16 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IDoor
+public class Door : MonoBehaviour, IDoor, IPlayerProximityTrigger
 {
     public EventHandler OnOpenDoor;
 
     [SerializeField]
-    private GameObject DoorPrefab;
-
-    [SerializeField]
     private bool IsLocked;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    [SerializeField]
+    private RoomDifficulty m_difficulty;
 
     [ContextMenu("OpenDoor")]
     public void Open()
@@ -32,5 +19,20 @@ public class Door : MonoBehaviour, IDoor
         animator.SetBool("IsLocked", IsLocked);
 
         animator.SetTrigger("OpenDoor");
+    }
+
+    public void Trigger()
+    {
+        StartCoroutine(OpenAndTrigger());
+    }
+
+    private IEnumerator OpenAndTrigger()
+    {
+        Open();
+
+        // TODO: This should wait until the animation is complete!
+        yield return new WaitForSeconds(0.75f);
+
+        RoomManager.Instance.LoadNewRoom(m_difficulty);
     }
 }
