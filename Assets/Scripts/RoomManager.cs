@@ -22,11 +22,6 @@ public class RoomManager : MonoBehaviour
         m_rooms = Resources.LoadAll<RoomSCROB>("Rooms");
     }
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void LoadNewRoom(RoomDifficulty difficulty)
     {
         var matches = m_rooms.Where(room => room.Difficulty == difficulty).ToList<RoomSCROB>();
@@ -38,6 +33,6 @@ public class RoomManager : MonoBehaviour
         }
 
         var match = matches[Random.Range(0, matches.Count())];
-        SceneManager.LoadSceneAsync(match.SceneName, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(match.SceneName, LoadSceneMode.Single);
     }
 }
