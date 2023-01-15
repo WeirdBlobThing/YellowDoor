@@ -10,7 +10,6 @@ public class Lock : MonoBehaviour, IPlayerProximityTrigger
     [SerializeField]
     public bool IsLocked = true;
 
-    Transform transform;
 
     public void Trigger()
     {
@@ -30,15 +29,10 @@ public class Lock : MonoBehaviour, IPlayerProximityTrigger
     // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
         if (IsBigLock)
         {
             transform.localScale *= 2;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }
