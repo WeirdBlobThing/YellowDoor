@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3rdParty/_Barking_Dog/3D Free Modular Kit/Test_Map.unity
     guid: 7b533dfe561bc47c8975c955fe4ef3d3
+  - enabled: 1
+    path: Assets/3rdParty/LowPolyDungeonsLite/Scenes/LowPolyDungeonsLite_Demo.unity
+    guid: 8fdb66b3d5f94c2488dec767fb72a89e
   m_configObjects: {}
