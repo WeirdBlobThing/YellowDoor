@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerMovementTest.unity
     guid: 8f43f435078b9264ea011117d952b25a
   - enabled: 1
-    path: Assets/Scenes/RoomtestJacob.unity
+    path: Assets/Scenes/Stanely Room.unity
     guid: bd8e6c6404c1966469795698c92b688d
   - enabled: 1
     path: Assets/Scenes/TestRoom.unity
