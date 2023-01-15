@@ -7,7 +7,7 @@ public class Door : MonoBehaviour, IDoor, IPlayerProximityTrigger
     public EventHandler OnOpenDoor;
 
     [SerializeField]
-    private bool IsLocked;
+    private Lock Lock;
 
     [SerializeField]
     private RoomDifficulty m_difficulty;
@@ -16,7 +16,8 @@ public class Door : MonoBehaviour, IDoor, IPlayerProximityTrigger
     public void Open()
     {
         var animator = GetComponent<Animator>();
-        animator.SetBool("IsLocked", IsLocked);
+
+        animator.SetBool("IsLocked", Lock.IsLocked);
 
         animator.SetTrigger("OpenDoor");
     }
@@ -28,11 +29,15 @@ public class Door : MonoBehaviour, IDoor, IPlayerProximityTrigger
 
     private IEnumerator OpenAndTrigger()
     {
-        Open();
+        //No lock, already unlocked, or player unlocked by attempting to open
+        if (Lock == null || Lock.IsLocked == false || Lock.AttemptUnlock())
+        {
+            Open();
 
-        // TODO: This should wait until the animation is complete!
-        yield return new WaitForSeconds(0.75f);
+            // TODO: This should wait until the animation is complete!
+            yield return new WaitForSeconds(0.75f);
 
-        RoomManager.Instance.LoadNewRoom(m_difficulty);
+            RoomManager.Instance.LoadNewRoom(m_difficulty);
+        }
     }
 }
